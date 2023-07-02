@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "Nav"
+    "Main"
+    "Footer";
+}
+
+/* Nav */
+nav {
+  grid-area: Nav;
+  background: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.profile h2 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.toggle {
+  background: none;
+  border: blueviolet;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: none;
+}
+
+/* Main */
+main {
+  grid-area: Main;
+  display: grid;
+  background-color: aliceblue;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+main h1 {
+  text-align: center;
+  color: darkblue;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  width: 100%;
+}
+
+.gallery img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  grid-area: Footer;
+  text-align: center;
+  border-top: 1px solid blue;
+  background-color: blue;
+  color: #fff;
+}
+
+.buton1 {
+  color: #fff;
+  align-items: center;
+}
+
+.pages-button {
+  color: aliceblue;
+}
+
+/* Media queries */
+@media (min-width: 576px) {
+  .toggle {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin: 0 0.25rem;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .layout {
+    grid-template-areas:
+      "Nav Main"
+      "Nav Footer";
+    grid-template-columns: 30% 2fr;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 15%;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 2rem 0 4rem 0;
+  }
+
+  nav ul li {
+    margin-bottom: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1.25rem;
+  }
+}
